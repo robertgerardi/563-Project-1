@@ -1,26 +1,13 @@
-1. Type "make" to build.  (Type "make clean" first if you already compiled and want to recompile from scratch.)
+North Carolina State University - ECE 563 - Microprocessor Architecture
 
-2. Run trace reader:
+High Level Overview
 
-   To run without throttling output:
-   ./sim 32 8192 4 262144 8 3 10 ../example_trace.txt
+o Programmed a simulator using C++ that mimicked the actions of a level one and two cache, fetching load and stores instructions sent from validation runs, and bringing them down from main memory.
+o Implemented a prefetch unit that would use multiple stream buffers to fetch new instructions to lower miss rates.
+o Compiled a report that demonstrated the mispredictions rates, energy consumption, and AAT for various level 1 and level 2 cache configurations. Configuration changes included blocksize, cache size, associativity, and prefetching.
 
-   To run with throttling (via "less"):
-   ./sim 32 8192 4 262144 8 3 10 ../example_trace.txt | less
+Code Descriptions 
 
-   To run and confirm that all requests in the trace were read correctly:
-   ./sim 32 8192 4 262144 8 3 10 ../example_trace.txt > echo_trace.txt
-   diff ../example_trace.txt echo_trace.txt
-	The result of "diff" should indicate that the only difference is that echo_trace.txt has the configuration information.
-	0a1,10
-	> ===== Simulator configuration =====
-	> BLOCKSIZE:  32
-	> L1_SIZE:    8192
-	> L1_ASSOC:   4
-	> L2_SIZE:    262144
-	> L2_ASSOC:   8
-	> PREF_N:     3
-	> PREF_M:     10
-	> trace_file: ../example_trace.txt
-	> ===================================
+Sim.h - header file that includes all important cache interface functions and variables.
 
+Cache.cc - cpp file that includes the cache initilization, cache function implementations, and trace interactions.
