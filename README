@@ -6,7 +6,7 @@ o Programmed a simulator using C++ that mimicked the actions of a level one and 
 o Implemented a prefetch unit that would use multiple stream buffers to fetch new instructions to lower miss rates.
 o Compiled a report that demonstrated the mispredictions rates, energy consumption, and AAT for various level 1 and level 2 cache configurations. Configuration changes included blocksize, cache size, associativity, and prefetching.
 
-Code Descriptions 
+File Descriptions 
 
 Sim.h - header file that includes all important cache interface functions and variables.
 
